@@ -85,7 +85,7 @@ public class TestPerson {
 
     @Test
     public void testIfPersonIsEligibleToDrive() {
-        Person.printPersons(list, new CheckIfEligibleToDrive());
+        Person.printPersons(list);
         Assert.assertTrue(amanda.getAge() > 16);
         Assert.assertTrue(giles.getAge() > 16);
         Assert.assertTrue(hunter.getAge() > 16);

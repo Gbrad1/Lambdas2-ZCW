@@ -4,15 +4,13 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
 
-class CheckIfEligibleToDrive implements CheckPerson{
+
+public class Person implements CheckPerson{
 
     @Override
-    public boolean test(Person p) {
+    public boolean checkIfEligibleToDrive(Person p) {
         return p.getAge() > 16;
     }
-}
-
-public class Person {
 
     public enum Sex {
         MALE,
@@ -84,12 +82,11 @@ public class Person {
     }
 
 
-    public static void printPersons(List<Person> roster, CheckPerson tester) {
-        for (Person p : roster) {
-            if (tester.test(p)) {
-                p.printPerson();
+    public static void printPersons(List<Person> roster) {
+        roster.forEach(person -> {
+            if (person.getAge() > 16) {
+                person.printPerson();
             }
-        }
+        });
     }
-
 }
