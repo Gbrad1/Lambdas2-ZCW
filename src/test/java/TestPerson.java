@@ -24,8 +24,6 @@ public class TestPerson {
 
     List<Person> list;
 
-    CheckIfPersonIsEligibleToDrive checkIfPersonIsEligibleToDrive;
-
     @Before
     public void setup() {
         ld = LocalDate.of(2000, 1, 1);
@@ -87,7 +85,7 @@ public class TestPerson {
 
     @Test
     public void testIfPersonIsEligibleToDrive() {
-        Person.printPersons(list, new CheckIfPersonIsEligibleToDrive());
+        Person.printPersons(list, new CheckIfEligibleToDrive());
         Assert.assertTrue(amanda.getAge() > 16);
         Assert.assertTrue(giles.getAge() > 16);
         Assert.assertTrue(hunter.getAge() > 16);
